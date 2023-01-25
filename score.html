@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 001 */
+        div {
+            height: 100px;
+            width: 100px;
+            border: 1px solid;
+        }
+
+        /* 011 */
+        div.box {
+            width: 100%;
+            height: 80vh;
+        }
+
+        /* 010 */
+        .box {
+            width: 100%;
+            height: 100vh;
+        }
+
+        /*010  */
+        .children {
+            border: 10px solid red;
+            height: 100px;
+            width: 100px;
+        }
+
+        /* 100 */
+        #second {
+            border: 10px solid green !important;
+        }
+
+        /* 110 */
+        #second.children {
+            border: 10px solid red;
+        }
+
+        /* 
+        .small .children {
+            height: 50px;
+            width: 50px;
+        } */
+
+        /* 
+            specificity score 
+            id > class > element/tag
+            000
+
+            important > inline > id > class > element/tag
+            00000
+        */
+
+        .parent {
+            width: 400px;
+            background-color: teal;
+            height: 100vh;
+        }
+
+        .child {
+            height: 200px;
+            width: 50%;
+            border: 1px solid black;
+            background-color: orange;
+            display: inline-block;
+        }
+
+        /* .child.second {
+            margin-left: -4px;
+        } */
+
+
+        /* 
+            pseudo class nad elements
+        */
+        .child:hover {
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        a:active {
+            /* padding-left: 50px; */
+            padding: 5px;
+            color: red;
+        }
+
+        /* a.first:active {
+            color: green
+        } */
+        a:first-child:active {
+            color: green
+        }
+
+        a {
+            color: blue;
+        }
+
+        /* 
+        011
+        */
+        a.focus {
+            color: red;
+        }
+        /* 010 */
+        .child:nth-child(2) {
+            margin-left: -4px;
+        }
+
+        /* 
+            selector 
+                id
+                class
+                elemnt/tag
+                attribute selelctor
+            
+            combined selector
+                descending
+                direct clinet
+                adjescent
+                general. 
+
+            
+            
+
+
+        
+        
+        */
+
+    </style>
+</head>
+
+<body>
+
+    <a href="gogle" class="first">google</a>
+    <a href="gogle">google</a>
+    <a href="gogle">google</a>
+    <form>
+        <input placeholder="name" />
+        <button type="button">add </button>
+    </form>
+
+    <span>one</span>
+    <p>p-one</p>
+    <p>p-two</p>
+    <span>one</span>
+    <span>one</span>
+    <span>one</span>
+    <span>one</span>
+    <span>one</span>
+    <span>one</span>
+    <div class="parent">
+        <div class="child"> child one</div>
+        <div class="child second"> child two</div>
+    </div>
+
+    <div class="box">
+        <div class="children"></div>
+        <div class="children" id="second" style="border:10px solid teal;"></div>
+        <div class="children"></div>
+        <div class="children"></div>
+        <div class="children"></div>
+    </div>
+
+    <div class="small">
+        <div class="children"></div>
+        <div class="children"></div>
+        <div class="children"></div>
+        <div class="children"></div>
+        <div class="children"></div>
+    </div>
+
+
+</body>
+
+</html>

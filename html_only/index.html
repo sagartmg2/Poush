@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Discover the latest in electronic & smart appliance technology with Samsung. Find the next big thing from smartphones & tablets to laptops & tvs & more course . ">
+    <title>HTML</title>
+    <meta name="keywords" content=" mern python ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Roboto&family=Roboto+Mono&display=swap"
+        rel="stylesheet">
+
+    <!-- exteranl css -->
+    <!-- <link rel="stylesheet" href="./css/styles.css">   -->
+
+    <!-- internal css -->
+    <style>
+        body {
+            font-family: 'BhuTuka Expanded One', cursive;
+            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* 
+            selector{
+                key: vlaue
+                property : value
+            }
+
+            selector 
+                - tag / element
+                - id 
+
+        */
+
+        /* #body {
+            background-color: orange;
+        }
+
+        body {
+            background-color: teal;
+        } */
+        /* 
+            specificity score 
+        */
+
+        ul {
+            list-style-type: none;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        /* 
+            DRY 
+            - donot repeat yourself. 
+         */
+        th,
+        td {
+            border: 1px solid;
+            padding: 10px;
+        }
+
+        tfoot {
+            text-align: center;
+        }
+
+
+        /* td{
+            border: 1px solid ;
+        } */
+        /* *{
+            margin:0;
+            padding:0;
+        } */
+
+        #box {
+            height: 200px;
+            width: 200px;
+            border: 1px solid;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+
+
+</head>
+<!-- inline css  -->
+<!-- <body style="background-color:teal"> -->
+
+<body id="html-body">
+
+    <form onsubmit="console.log('form-submitted.')">
+        <div>
+            <label>username</label>
+            <input type="text" maxlength="5" placeholder="username" required />
+        </div>
+        <div>
+            <span>email</span>
+            <input type="email" placeholder="email" />
+        </div>
+        <div>
+            <label>password</label>
+            <input type="password" placeholder="password" />
+        </div>
+        <div>
+            <label for="age">Age</label>
+            <input type="number" readonly id="age" min="0" max="100" value="10" />
+        </div>
+        <div>
+            <label for="terms">Aggree Terms and conditions</label>
+            <input type="checkbox" id="terms" />
+        </div>
+        <div>
+            <label for="terms">gender</label>
+            <!-- <input type="checkbox" id="terms" /> -->
+            <select>
+                <option value="">select</option>
+                <option value="">male</option>
+                <option value="" selected>female</option>
+                <option value="">other</option>
+            </select>
+        </div>
+        <div>
+            <input type="radio" name="gender">male</input>
+            <input type="radio" name="gender">fe-male</input>
+            <input type="radio" name="gender">other</input>
+        </div>
+        <div>
+            <textarea rows="10">
+            </textarea>
+        </div>
+        <input type="file" accept="image/*" multiple>
+        <input type="date">
+        <input type="date" hidden>
+        <input type="submit" />
+        <input type="reset" />
+        <input type="range" placeholder="price" min="0" max="1000" value="100"
+            onchange="console.log(event.target.value)">
+        <button type="button" disabled>add new fields</button>
+    </form>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">name</th>
+                <th rowspan="2">email</th>
+            </tr>
+            <tr>
+                <th>first-nmae</th>
+                <th>last-name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>name</td>
+                <td>l-name</td>
+                <td>email</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>l-name</td>
+                <td>email</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>l-name</td>
+                <td>email</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="box">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus itaque nesciunt, voluptatem assumenda
+        cupiditate veniam sit.
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="./index.html">home</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="contact.html">contact</a></li>
+                <li><a href="./html//location.html">location</a></li>
+                <li><a href="../testimonials.html">testimonials</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Qauntity</th>
+                <th>price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>pc</td>
+                <td>1</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>monitor</td>
+                <td>56</td>
+                <td>200</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">totoal</td>
+                <td>300</td>
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+
+    <p>mern class </p>
+    <span>html</span>
+    <span>css</span>
+
+    <h1>Mindrisers</h1>
+    <!-- 
+        comment  ctr + / 
+        in a  html page there shuld be only one h1 element or else it would be bad for SEO
+     -->
+    <!-- <h1>Mindrisers</h1> -->
+    <!-- <h1>Mindrisers</h1> -->
+    <h2>Mindrisers</h2>
+    <h2>Mindrisers</h2>
+    <h2>Mindrisers</h2>
+    <h2>Mindrisers</h2>
+    <h6>Mindrisers</h6>
+    <hr />
+    <hr>
+    <p>Lorem, ipsum dolor <br /> sit amet consectetur adipisicing elit. Et autem aut tempora omnis ipsum! Odio modi
+        fugit qui
+        possimus assumenda ipsum incidunt! Ea facere saepe accusantium voluptatum, magnam corporis. Est.</p>
+
+
+    <ol>
+        <li>
+            <p>html</p>
+        </li>
+        <li>
+            <p>css</p>
+        </li>
+        <li>
+            <p>js</p>
+        </li>
+
+    </ol>
+
+    <!-- anchor tag -->
+    <a href="https://www.google.com/" target="_blank">google</a>
+    <a href="about.html">about us</a>
+    <a href="contact.html">contact</a>
+    <a href="contactws.html">contactws</a>
+    <a href="https://i.picsum.photos/id/704/200/300.jpg?hmac=L0hDmSHSy2cciN8xRC5-EgnjSOLcurqToggugp9Deng"
+        download>external image</a>
+    <a href="./assets/sample.pdf" download>pdf</a>
+
+    <div>
+        <img src="./704-200x300.jpg" alt="forest" height="100" width="100" />
+    </div>
+    <div>
+        <img src="https://i.picsum.photos/id/413/200/200.jpg?hmac=e6w034LWyRaayerJY_efJywx28FwPjv-EC8F10jVtMQ"
+            alt="plant" height="100" width="100" />
+    </div>
+
+</body>
+
+</html>

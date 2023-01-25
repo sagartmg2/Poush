@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            /* font-size: 18px; */
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .box {
+            height: 400px;
+            width: 400px;
+            background-color: teal;
+        }
+
+        .children {
+            height: 200px;
+            width: 49%;
+            border: 1px solid black;
+            background-color: orange;
+            display: inline-block;
+        }
+
+        nav li,
+        ul {
+            display: inline;
+        }
+
+        nav {
+            position: relative;
+            font-size: 1.5rem
+        }
+
+        .nav-links {
+            position: absolute;
+            right: 0;
+            padding: 20px;
+        }
+
+        .logo-wrapper {
+            position: relative;
+        }
+
+        .logo-wrapper span {
+            position: relative;
+            top: -15px;
+            padding: 20px;
+            /* font-size: 2em;
+            font-size: 16px; */
+            /* font-size: 1em; */
+            /* font-size: 1rem; */
+        }
+
+        .btn {
+            background-color: aquamarine;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <ul class="logo-wrapper">
+            <li>
+                <img
+                    src="https://mindrisers.com.np/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmindrisers.932d828b.png&w=48&q=75" />
+                <span>mindrisers</span>
+            </li>
+        </ul>
+        <ul class="nav-links">
+            <li><a href="#">Course</a></li>
+            <li> <a href="#"> After +2 Courses</a> </li>
+            <li> <a href="#"> Online Admission</a> </li>
+            <li> <a href="#"> Placement Partner</a> </li>
+            <li> <a href="#"> Success Gallery</a> </li>
+            <li> <a href="#"> Blogs</a> </li>
+            <li> <a href="#" class="btn"> Contact Us</a> </li>
+        </ul>
+    </nav>
+
+    <div class="box">
+        <div class="children">children</div>
+        <div class="children">children</div>
+    </div>
+
+</body>
+
+</html>

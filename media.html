@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .project-wrapper {
+            padding: 10px;
+            width: 33.33%;
+        }
+
+        .project {
+            border: 1px solid;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .project p {
+            text-align: justify;
+        }
+
+        @media print{
+            body{
+                background-color: orange;
+                color: red;
+            }
+        }
+
+        @media  (max-width:768px) {
+            .project-wrapper {
+                width: 50%;
+            }
+        }
+
+
+        @media (max-width:576px) {
+
+            /* body{
+            color: orange;
+           }  */
+            /* .projects {
+                flex-direction: column;
+            } */
+            .project-wrapper {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <h3>Project</h3>
+    <hr />
+    <div class="projects">
+        <div class="project-wrapper">
+            <div class="project">
+                <img src="./git.png" alt="git logo" />
+                <h4>Git</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad odio architecto iste voluptates odit
+                    laborum
+                    nulla optio doloremque, impedit saepe placeat distinctio, suscipit, quibusdam ex reiciendis adipisci
+                    perferendis nobis eius?</p>
+            </div>
+        </div>
+        <div class="project-wrapper">
+            <div class="project">
+                <img src="./git.png" alt="git logo" />
+                <h4>Git</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad odio architecto iste voluptates odit
+                    laborum
+                    nulla optio doloremque, impedit saepe placeat distinctio, suscipit, quibusdam ex reiciendis adipisci
+                    perferendis nobis eius?</p>
+            </div>
+        </div>
+        <div class="project-wrapper">
+            <div class="project">
+                <img src="./git.png" alt="git logo" />
+                <h4>Git</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad odio architecto iste voluptates odit
+                    laborum
+                    nulla optio doloremque, impedit saepe placeat distinctio, suscipit, quibusdam ex reiciendis adipisci
+                    perferendis nobis eius?</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

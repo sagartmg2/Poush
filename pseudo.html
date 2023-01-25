@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .children {
+            height: 200px;
+            width: 200px;
+            border: 1px solid;
+        }
+
+        /* .one,
+        .third {
+            background-color: tan;
+        } */
+
+        /* .box :first-child{
+            background-color: tan;
+        } */
+        .children:not(:nth-child(3)) {
+            /* .children.third { */
+            background-color: tan;
+        }
+
+        form {
+            margin: 50px;
+        }
+
+        span {
+            color: red;
+        }
+
+        .required--start {
+            color: red
+        }
+
+        .required-field::after {
+            content: " *";
+            color: red;
+        }
+
+        .position {
+            height: 100px;
+            width: 100px;
+            border: 1px solid;
+        }
+
+        .static {
+            position: static;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        /* .absolute {
+            position: absolute;
+        }
+
+        */
+        .fixed {
+            position: fixed;
+        }
+
+        /* .sticky {
+            position: sticky;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div class="position static">static</div>
+    <div class="position relative">relative</div>
+    <div class="position absolute">absolute</div>
+    <div class="position fixed">fixed</div>
+    <div class="position sticky">sticky</div>
+    <hr style="margin-top: 10px;">
+    <hr>
+
+    <form id="first-form">
+        <div>
+            <label for="">Addres</label><br>
+            <input>
+        </div>
+        <div>
+            <label for="" class=" required-field">email</label><br>
+            <input>
+        </div>
+        <div>
+            <label for="" class=" required-field">password</label><br>
+            <input>
+        </div>
+        <button>signup</button>
+    </form>
+    <form>
+        <div>
+            <label for="">Addres</label><br>
+            <input>
+        </div>
+        <div>
+            <label for="">email<span class="required--start">*</span></label><br>
+            <input>
+        </div>
+        <div>
+            <label for="">password<span class="required--start">*</span></label><br>
+            <input>
+        </div>
+        <button>signup</button>
+    </form>
+    <div class="box">
+        <div class="children one">
+            description....
+        </div>
+        <div class="children"></div>
+        <div class="children third"></div>
+        <div class="children"></div>
+        <div class="children"></div>
+    </div>
+
+</body>
+
+</html>

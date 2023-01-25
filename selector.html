@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .target .child {
+            height: 100px;
+            width: 100px;
+            border: 1px solid;
+        }
+
+        /* #first,
+        #third {
+            margin-bottom: 10px;
+        } */
+        .mb-10 {
+            /* margin-bottom: 10px; */
+        }
+
+        /* 
+            combined selector   
+                -descended
+                - direct child
+                - attribute
+                - adjescent
+                 - descendednt
+        */
+
+        /* .box .mb-10 {
+            margin-bottom: 10px;
+        } */
+
+        /* .box .mb-10.child {
+            margin-bottom: 10px;
+        } */
+        /* .required-field{
+            border: 1px solid red;
+        } */
+        /* [required] {
+            border: 1px solid red;
+        } */
+
+        /* .first-div [type="password"] {
+            border: 1px solid red;
+        } */
+
+        #third {
+            background-color: green;
+        }
+
+        div.child.mb-10 {
+            background-color: orange;
+        }
+
+        /* 
+            specificity score
+        */
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box target">
+        <div class="child mb-10" id="first"></div>
+        <div class="child"></div>
+        <div class="child mb-10" id="third"> </div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+
+    <div class="box">
+        <div class="first-div">
+            <input class="mb-10 child" id="" />
+            <input class="required-field first-div" type="password" required>
+            <input class="required-field" type="text" required>
+            <input class="required-field" required>
+        </div>
+        <div class="second-div">
+            <input />
+            <input class="required-field" type="password" required>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

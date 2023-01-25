@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <style>
+        /* css syntax */
+        /* 
+            selector {
+                key/property: value
+            }
+
+            selector
+                - element/ tag 
+                - id 
+                - class 
+
+                - comibined selector 
+                    - descendent selector
+
+        */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        body {
+            /* background-color: wheat; */
+        }
+
+        form {
+            /* margin : 10px; */
+            border: 1px solid;
+            padding: 50px;
+            /* width: 900px; */
+            width: 100%;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media(min-width:578px) {
+            form {
+                width: 50%;
+            }
+        }
+
+        #info {
+            border-bottom: 1px solid black;
+            /* margin: 10px; */
+            margin-bottom: 10px;
+            /* padding-bottom: 10px; */
+        }
+
+        #title {
+            font-size: 32px;
+            font-weight: normal;
+        }
+
+        #info p {
+            margin-bottom: 10px;
+        }
+
+        /* #input-first-name,
+        #input-last-name,
+        #input-email {
+            padding: 5px;
+        } */
+        /* 
+        .input-field {
+            padding: 5px
+        } */
+
+        input {
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+        .w--50 {
+            width: 49%;
+        }
+
+        .w--100 {
+            width: 100%;
+        }
+
+        button {
+            padding: 5px;
+            width: 100px;
+            color: white;
+            border: none;
+        }
+
+        #login {
+            background-color: teal;
+        }
+
+        #register {
+            background-color: green;
+        }
+    </style>
+
+
+</head>
+
+<!-- <body style="background-color: yellow;"> -->
+
+<body>
+
+    <form>
+        <div id="info">
+            <!-- <p id="title">Sign Up</p> -->
+            <h1 id="title">Sign Up</h1>
+            <p>its quick and easy</p>
+        </div>
+        <div id="inputs-wrapper">
+            <!-- <label>First Name</label> -->
+            <input placeholder="First Name" id="input-first-name" class="input-field w--50" />
+            <input placeholder="Last Name" id="input-last-name" class="input-field w--50" />
+            <div>
+                <input placeholder="email" id="input-email" class="input-field w--100" />
+            </div>
+            <div>
+                <input placeholder="password" id="input-password" class="input-field w--100" />
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore rem esse nostrum quaerat repellat! Odit
+                magni corrupti est, porro error sunt aspernatur esse perspiciatis ducimus quibusdam debitis quos, maxime
+                assumenda.</p>
+        </div>
+        <div>
+            <button id="register">
+                Register
+            </button>
+            <button id="login">Login</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

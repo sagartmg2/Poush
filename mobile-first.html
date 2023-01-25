@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .projects {}
+
+        .project-wrapper {
+            padding: 10px;
+        }
+
+        .project {
+            border: 1px solid;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .project p {
+            text-align: justify;
+        }
+
+        /*  */
+
+        @media (min-width:576px) {
+            .projects {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .project-wrapper {
+                width: 50%;
+            }
+        }
+
+        @media(min-width:992px) {
+            .project-wrapper {
+                width: 33.33%;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body class="container">
+
+    <h3>Project</h3>
+    <div class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
+    </div>
+    <hr />
+    <div class="projects d-flex">
+        <div class="project-wrapper">
+            <div class="project">
+                <img src="./git.png" alt="git logo" />
+                <h4>Git's</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad odio architecto iste voluptates odit
+                    laborum
+                    nulla optio doloremque, impedit saepe placeat distinctio, suscipit, quibusdam ex reiciendis adipisci
+                    perferendis nobis eius?</p>
+            </div>
+        </div>
+        <div class="project-wrapper">
+            <div class="project">
+                <img src="./git.png" alt="git logo" />
+                <h4>Git</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad odio architecto iste voluptates odit
+                    laborum
+                    nulla optio doloremque, impedit saepe placeat distinctio, suscipit, quibusdam ex reiciendis adipisci
+                    perferendis nobis eius?</p>
+            </div>
+        </div>
+        <div class="project-wrapper">
+            <div class="project">
+                <img src="./git.png" alt="git logo" />
+                <h4>Git</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad odio architecto iste voluptates odit
+                    laborum
+                    nulla optio doloremque, impedit saepe placeat distinctio, suscipit, quibusdam ex reiciendis adipisci
+                    perferendis nobis eius?</p>
+            </div>
+        </div>
+    </div>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28261.635951062646!2d85.28878569602969!3d27.695526778845885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1851ae40bd91%3A0xbd8552665e65d95b!2sSukraraj%20Tropical%20%26%20Infectious%20Disease%20Hospital!5e0!3m2!1sen!2snp!4v1674471774451!5m2!1sen!2snp"
+        style="width:100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <form>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</body>
+
+</html>
