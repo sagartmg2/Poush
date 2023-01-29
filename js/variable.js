@@ -142,7 +142,7 @@ console.log("ages", ages);
 
 let projector_1 = {
     "color": "black",
-    brands: ["samsung", "lg",1111]
+    brands: ["samsung", "lg", 1111]
 }
 
 console.log("projector", projector_1);
@@ -160,6 +160,36 @@ console.log("projector", projectors);
     make a course object  - duration, timing, price, active
     make a courses array
 */
+
+let course = {
+    duration: 2,
+    timing: "Morning",
+}
+let course_2 = {
+    duration: 2,
+    timing: "Morning",
+}
+
+let numbers = [1, 2, 3, 4]
+let names = ["ram", "hari"]
+// let courses = []
+
+let courses = [{ name: "BBA", Price: 1200, duration: 6 }]
+
+let student = {
+    roll: 1,
+    name: "Ram",
+    courses: [
+        { name: "BBA", Price: 1200, duration: 6 },
+        { name: "BCA", Price: 1200, duration: 6 }
+    ]
+}
+
+
+// let person = {
+//     name: "asdfa",
+//     age: 12
+// }
 
 
 
