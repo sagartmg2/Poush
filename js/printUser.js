@@ -233,3 +233,71 @@ let users = [
         }
     }
 ]
+
+// console.log(users[0].name + "'s username is " + users[0].username)
+// console.log(users[1].name + "'s email is " + users[1].email)
+// console.log(users[2].name + "'s email is " + users[2].website)
+// console.log(users[3].name + "'s email is " + users[3].email)
+// console.log(users[2].name + "'s email is " + users[2].email)
+// console.log(users[2].name + "'s email is " + users[2].email)
+// console.log(users[2].name + "'s email is " + users[2].email)
+// console.log(users[2].name + "'s email is " + users[2].email)
+// console.log(users[2].name + "'s email is " + users[2].email)
+
+/*
+    funciton <functionName> (parameter1, parameter) {
+    }
+*/
+
+// console.log(users[undefined]);
+
+
+let person = {
+    name: "ram",
+    age: 10,
+    1: "one"
+}
+
+let input = "name"
+// output > if input is  name, should return ram, if, age should return age
+
+
+// console.log(person.<name>);
+
+function placeOrder() {
+    // 1 . // add to database 
+    // 2. // reduce balance, 
+    // 3. cart item  clear
+}
+
+placeOrder()
+
+
+
+function printUserInfo(index = 0) { // index -> parameter
+    // console.log({ index });
+    // console.log(users[0].name + "'s username is " + users[0].username)
+    console.log(users[index].name + "'s email is " + users[index].email)
+}
+
+// printUserInfo();
+// printUserInfo(0, "email"); // 0 -> arguement
+// printUserInfo(1, "username");
+// printUserInfo(2);
+// printUserInfo(3);
+
+// calculate the sum of two number 
+// console.log((1 + 2) * 2);
+// console.log((1 + 2) * 2);
+// console.log((1 + 2) * 2);
+// console.log((12 + 1) * 2);
+
+function claculateSumAndDouble(num1, num2) { // let num1 = 1 , let num2 = 2
+    // console.log({ num1 });
+    // console.log({ num2 });
+    console.log((num1 - num2) * 2);
+}
+
+// claculateSumAndDouble(1, 2)
+// claculateSumAndDouble(3, 4)
+// claculateSumAndDouble(10, 20)
