@@ -163,13 +163,23 @@ title = "QA"
 console.log({ title });
 console.log({ name });
 
+let person1 = {
+    name: "ram"
+}
 
-let fruites = ["apple"]
-let items = fruites  // the value of fruites is not copied, insted its location /reference is set to varaible items
+let person2 = { ...person1 }
+person2.age = 12;
+console.log({ person2 });
+console.log({ person1 });
 
-items[0] = "orange"
 
+let fruites = ["apple", "banana", "mango"]
+// let items = fruites // the value of fruites is not copied, insted its location /reference is set to varaible items
+let items = [...fruites]  // spread operator // [apple,banana]
+
+items[1] = "orange"
 console.log({ fruites });
+
 console.log({ items });
 
 
