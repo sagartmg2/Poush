@@ -7,11 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./theme.js" defer></script>
+    <style>
+        body.dark {
+            background-color: black;
+            color: white;
+        }
+
+        body.dark #dark {
+            display: none;
+        }
+
+        #light {
+            display: none;
+        }
+
+        body.dark #light {
+            display: initial;
+        }
+    </style>
 </head>
 
-<body>
-    <button id="dark" onclick="changeToDarkTheme()">dark theme</button>
-    <button id="dark" onclick="changeToLIghtTheme()">light theme</button>
+<body class="body">
+    <button id="light" onclick="changeTheme('light')">light theme</button>
+    <button id="dark" onclick='changeTheme("dark")'>dark theme</button>
     <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde error in dignissimos. Numquam rem
         eligendi
         delectus quis, dolorum ipsam ipsa officia? Reprehenderit ipsa aliquid, a sint voluptatem nisi consequatur
