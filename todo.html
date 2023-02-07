@@ -13,30 +13,35 @@
     <form onsubmit="handleSubmit(event)">
         <div>
             <label>title</label>
-            <input />
+            <input id="tod-input" name="todo" />
+            <!-- <input id="" name="username" />
+            <input id="" name="password" /> -->
             <button>create</button>
         </div>
     </form>
+
     <hr>
     <strong>Todo List</strong>
     <hr>
     <ul id="todo-list">
-        <li>
-            one
-        </li>
-        <li>
-            one
-        </li>
     </ul>
 
 </body>
 <script>
+    let todos = []
+
     const handleSubmit = (event) => {
         event.preventDefault()
+        console.log(event.target.todo.value)
+
+        todos.push(event.target.todo.value)
+        console.log(todos);
+
+        return;
 
         let new_li = document.createElement("li")
-
-        new_li.innerText = "three"
+        // new_li.innerText = document.getElementById("todo-input").value
+        new_li.innerText = event.target.todo.value
 
         document.getElementById("todo-list").appendChild(new_li)
     }
