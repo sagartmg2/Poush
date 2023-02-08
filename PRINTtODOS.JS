@@ -18,7 +18,7 @@ let todos = [
         "title": "task three",
         "completed": true
     }
-]
+]   
 
 /* 
     TODO:

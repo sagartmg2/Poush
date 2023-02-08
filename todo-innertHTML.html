@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form onsubmit="handleSubmit(event)">
+        <div>
+            <label>title</label>
+            <input id="tod-input" name="todo" />
+            <button>create</button>
+        </div>
+    </form>
+
+    <hr>
+    <strong>Todo List</strong>
+    <hr>
+    <ul id="todo-list">
+    </ul>
+
+</body>
+<script>
+    let todos = []
+
+    if (localStorage.getItem("todos")) {
+        todos = JSON.parse(localStorage.getItem("todos"))
+        setTodos()
+
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log(event.target.todo.value)
+        todos.push(event.target.todo.value)
+        event.target.todo.value = ""
+        setTodos()
+    }
+
+
+    function setTodos() {
+        console.log("set todos");
+
+        let str = "";
+        todos.forEach((todo, index) => {
+            str = str + `<li>${todo} <button onclick="removeTodo(${index})">delete</button></li> `
+        })
+        document.getElementById("todo-list").innerHTML = str
+
+        localStorage.setItem("todos", JSON.stringify(todos))
+    }
+
+    function removeTodo(idx) {
+        todos = todos.filter((todo, index) => {
+            if (index == idx) {
+                return false;
+            } else {
+                return true;
+            }
+        })
+
+        setTodos()
+    }
+
+
+</script>
+
+</html>

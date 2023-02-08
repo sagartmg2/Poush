@@ -1253,6 +1253,15 @@ let findCounryCode = (name) => {
 
 findCounryCode("nepal") // => is Np
 
+let new_arr = countries.filter((country) => {
+    if (country.name === "Nepal") {
+        return true;
+    } else {
+        return false;
+    }
+})
+console.log({ new_arr });
+
 /* 
 
     array functions
