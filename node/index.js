@@ -2,7 +2,11 @@ console.log("__dirname : " + __dirname);
 console.log("__dirname : " + __filename);
 
 
-/* node modules */
+/* 
+node modules 
+    - common js module  // module.exports and require
+    - es module
+*/
 
 /* 
     core module
@@ -10,14 +14,17 @@ console.log("__dirname : " + __filename);
     third party module
  */
 
-const fs = require("fs")
+const fs = require("fs")  // core modules
 const path = require("path")
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');  // third party module
 
 /* const {varaible} = object  // object destructuring. */
 const { login } = require("./auth")  // local module  => {login:() =>{},signup=() =>{}}
-
+// const checkToken = require("./checkToken")
+const customName = require("./checkToken")
 login()
+// checkToken();
+// customName();
 
 
 let new_path = path.join(__dirname, "custom.txt")
