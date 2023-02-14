@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';  // default import 
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Signup from './Signup';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 /*  kind of innerHTML  */
+
 root.render(
-    // singup()
-    <App/> 
+    <>
+        <App />
+    </>
 
 );
 

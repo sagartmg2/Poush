@@ -1,26 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-import Signup from './Signup';
+import { Footer, Subscription } from './component/Footer';
+import HeaderComponent from './component/Header';
 
 function App() {
+
+  let full_form = "JAVASCRIPT xml "
+  let str = "{ }"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Signup/>
-    </div>
+    <>
+      <HeaderComponent />
+      <div>
+        <h1>REACT JSX {1 + 1}   </h1>
+        <p>lorem ... {full_form}  </p>
+        <p>we can use javascript using {"{ }"} </p>
+      </div>
+      <Subscription />
+      <Footer />
+    </>
+
+
   );
 }
 
