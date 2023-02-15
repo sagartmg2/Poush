@@ -1,6 +1,12 @@
 import './App.css';
 import { Footer, Subscription } from './component/Footer';
+import Form, { SingupForm } from './component/Form';
 import HeaderComponent from './component/Header';
+
+function createForm(title) {
+
+}
+
 
 function App() {
 
@@ -13,8 +19,16 @@ function App() {
         <h1>REACT JSX {1 + 1}   </h1>
         <p>lorem ... {full_form}  </p>
         <p>we can use javascript using {"{ }"} </p>
+        <hr />
       </div>
-      <Subscription />
+      <Form title="login" terms={false} />  {/*  createForm("login") */}
+      <Form title="signup" terms={true} /> {/*  createForm("login") */}
+      {/* 
+          PROPS
+            - arguement passed in an functional component 
+      */}
+      <hr />
+      {/* <Subscription /> */}
       <Footer />
     </>
 
