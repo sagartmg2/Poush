@@ -1,4 +1,5 @@
 import './App.css';
+import Counter from './component/Counter';
 import { Footer, Subscription } from './component/Footer';
 import Form, { SingupForm } from './component/Form';
 import HeaderComponent from './component/Header';
@@ -16,6 +17,8 @@ function App() {
     <>
       <HeaderComponent />
       <div>
+        <Counter/>
+        <hr/>
         <h1>REACT JSX {1 + 1}   </h1>
         <p>lorem ... {full_form}  </p>
         <p>we can use javascript using {"{ }"} </p>
