@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Counter from './component/Counter';
+import ShowInputValue from './component/ShowInputValue';
+import Todos from './component/Todos';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -11,7 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
         {/* <App /> */}
-        <Counter/>
+        {/* <Counter/> */}
+        {/* <ShowInputValue/> */}
+        <Todos />
     </>
 
 );
