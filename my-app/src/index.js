@@ -5,6 +5,8 @@ import App from './App';
 import Counter from './component/Counter';
 import ShowInputValue from './component/ShowInputValue';
 import Todos from './component/Todos';
+import ShoppingList from './component/ShoppingList';
+import Shopping from './component/Shopping';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,7 +17,11 @@ root.render(
         {/* <App /> */}
         {/* <Counter/> */}
         {/* <ShowInputValue/> */}
-        <Todos />
+        {/* <Todos /> */}
+        {/* <ShoppingList/>  */}
+        <Shopping/>
+        
+
     </>
 
 );
