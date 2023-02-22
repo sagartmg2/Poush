@@ -7,6 +7,7 @@ import ShowInputValue from './component/ShowInputValue';
 import Todos from './component/Todos';
 import ShoppingList from './component/ShoppingList';
 import Shopping from './component/Shopping';
+import TodoApi from './component/TodoApi';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,7 +20,8 @@ root.render(
         {/* <ShowInputValue/> */}
         {/* <Todos /> */}
         {/* <ShoppingList/>  */}
-        <Shopping/>
+        {/* <Shopping/> */}
+        <TodoApi/>
         
 
     </>

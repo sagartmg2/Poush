@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import Git from "../git.png"
+
 
 export default function Shopping() {
 
@@ -39,9 +41,47 @@ export default function Shopping() {
         console.log(items)
     }
 
+    /* 
+
+   let arr =  [
+      {
+        "title": "oen",
+        "quanity": "1"
+      },
+      {
+        "title": "two",
+        "quanity": "2"
+      },
+      {
+        "title": "THREE",
+        "quanity": "3"
+      },
+     
+    ],
+    
+    */
+
+    function deleteTodo(index) {
+
+        let temp = [...items]
+        temp = temp.filter((todo, idx) => {
+            if (index != idx) {
+                return true;
+            }
+        })
+
+        setItems(temp)
+        // temp = temp.filter((todo, idx) => index != idx)
+
+    }
+
+
     console.log("re-render");
     return (
         <>
+            {/* <img src="../git.png" /> */}
+            <img src={Git} width={50} />
+            <img src="./git.png" width={50} />
             <div>Shopping</div>
 
             <form onSubmit={handleSuibmit} >
@@ -60,15 +100,15 @@ export default function Shopping() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {
+                    {
                         items.map((item, index) => {
                             return <tr key={index} >
                                 <td>{item.title}</td>
                                 <td>{item.quanity}</td>
-                                <td><button>delete</button></td>
+                                <td><button onClick={() => deleteTodo(index)}>delete</button></td>
                             </tr>
                         })
-                    } */}
+                    }
                 </tbody>
             </table>
         </>
