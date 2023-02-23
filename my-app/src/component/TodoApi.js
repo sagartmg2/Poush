@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
-
+import {Link} from "react-router-dom"
 
 export default function TodoApi() {
     const [todos, setTodos] = useState([]);
@@ -104,7 +104,7 @@ export default function TodoApi() {
                     {
                         todos.map(todo => {
                             return <tr key={todo.id}>
-                                <td>{todo.title}</td>
+                                <td><Link to="/todos/id"> {todo.title}</Link></td>
                                 <td>{todos.completed}</td>
                             </tr>
                         })

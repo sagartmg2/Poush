@@ -9,20 +9,23 @@ import ShoppingList from './component/ShoppingList';
 import Shopping from './component/Shopping';
 import TodoApi from './component/TodoApi';
 
+import { BrowserRouter } from "react-router-dom"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 /*  kind of innerHTML  */
 
 root.render(
     <>
-        {/* <App /> */}
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
         {/* <Counter/> */}
         {/* <ShowInputValue/> */}
         {/* <Todos /> */}
         {/* <ShoppingList/>  */}
         {/* <Shopping/> */}
-        <TodoApi/>
-        
+        {/* <TodoApi/> */}
+
 
     </>
 

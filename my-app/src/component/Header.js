@@ -1,4 +1,5 @@
 import { Footer } from "./Footer"
+import { Link } from "react-router-dom"
 
 
 /* 
@@ -14,8 +15,13 @@ function Header() {
         {/* <Footer/> */}
         <nav>
             <ul>
-                <li><a href='home'>home {true ? "true" : "false"} </a></li>
-                <li><a href='about'>Abut</a></li>
+                <li><Link to='home'>home {true ? "true" : "false"} </Link></li>
+                <li><Link to='about'>Abut</Link></li>
+                <li><Link to='counter'>counter</Link></li>
+                <li><Link to='todos'>Todos</Link></li>
+                <li><Link to='login'>login</Link></li>
+                <li><Link to='about'>singup</Link></li>
+                <li><Link to='orders'>orders</Link></li>
             </ul>
         </nav>
     </header>

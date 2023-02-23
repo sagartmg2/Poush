@@ -1,12 +1,11 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Counter from './component/Counter';
 import { Footer, Subscription } from './component/Footer';
 import Form, { SingupForm } from './component/Form';
 import HeaderComponent from './component/Header';
+import TodoApi from './component/TodoApi';
 
-function createForm(title) {
-
-}
 
 
 function App() {
@@ -15,17 +14,27 @@ function App() {
   let str = "{ }"
   return (
     <>
+      {/* <BrowserRouter> */}
       <HeaderComponent />
+      <Routes>
+        <Route path='counter' element={<Counter />} />
+        <Route path='login' element={<Form title="login" terms={false} />} />
+        <Route path='products' element={<h1>products page</h1>} />
+        <Route path='todos' element={<TodoApi />} />
+        <Route path='orders' element={<h1>orders page</h1>} />
+        <Route path='*' element={<h1>404 page not found</h1>} />
+      </Routes>
+      {/* </BrowserRouter> */}
       <div>
-        <Counter/>
-        <hr/>
+
+        {/* <hr />
         <h1>REACT JSX {1 + 1}   </h1>
         <p>lorem ... {full_form}  </p>
         <p>we can use javascript using {"{ }"} </p>
-        <hr />
+        <hr /> */}
       </div>
-      <Form title="login" terms={false} />  {/*  createForm("login") */}
-      <Form title="signup" terms={true} /> {/*  createForm("login") */}
+      {/*  createForm("login") */}
+      {/* <Form title="signup" terms={true} />  createForm("login") */}
       {/* 
           PROPS
             - arguement passed in an functional component 

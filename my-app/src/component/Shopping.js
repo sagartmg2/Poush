@@ -83,6 +83,7 @@ export default function Shopping() {
             <img src={Git} width={50} />
             <img src="./git.png" width={50} />
             <div>Shopping</div>
+            <h1>pERSIST THE TODO ITESM, .. EVEN AFTER REFRESH</h1>
 
             <form onSubmit={handleSuibmit} >
                 <input placeholder='title' name='title' />
