@@ -10,6 +10,7 @@ import Shopping from './component/Shopping';
 import TodoApi from './component/TodoApi';
 
 import { BrowserRouter } from "react-router-dom"
+import ReduxComponent from './ReduxComponent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 /*  kind of innerHTML  */
@@ -17,7 +18,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
         <BrowserRouter>
-            <App />
+            {/* <App /> */}
+            <ReduxComponent />
         </BrowserRouter>
         {/* <Counter/> */}
         {/* <ShowInputValue/> */}
