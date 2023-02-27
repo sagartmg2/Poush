@@ -14,6 +14,7 @@ let arr = [
 
 ]
 
+
 let todos = arr.filter((todo, index) => {
     if (index != 2) {
         return true

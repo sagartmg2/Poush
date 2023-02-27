@@ -8,4 +8,7 @@
 - toggle completion status
 -  change counter in one root component from two other sub Components - Incremant.jsx and Decrement.jsx
 
+// feb 27 
+- in todos.. if complted.. make it gren else make it red
+
 

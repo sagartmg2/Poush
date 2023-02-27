@@ -74,7 +74,22 @@ export default function TodoApi() {
     // },[dependencies])
 
 
+    function toggleStatus(index) {
 
+        /*
+            1. create a new array with all other todos element 
+            2. from our new array only change compoletion status of the todo which is clicked
+            3. setTodos with new array with changed value
+         */
+        let temp = todos.map((todo, idx) => {
+            if (idx == index) {
+                return { ...todo, completed: !todo.completed }
+            }
+            return todo;
+        })
+
+        setTodos(temp)
+    }
 
 
     console.log("re-render");
@@ -102,10 +117,11 @@ export default function TodoApi() {
 
                 <tbody>
                     {
-                        todos.map(todo => {
+                        todos.map((todo, index) => {
                             return <tr key={todo.id}>
                                 <td><Link to={`/todos/${todo.id}`}> {todo.title}</Link></td>
-                                <td>{todo.completed}</td>
+                                {/* <td>{JSON.stringify(todo.completed)}</td> */}
+                                <td  onClick={() => toggleStatus(index)}>{todo.completed ? "complted" : "incomplted"}</td>
                             </tr>
                         })
                     }

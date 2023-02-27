@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Decrement() {
+export default function Decrement({ setCount }) {
     return (
         <div>
-            <button>decreemnt</button>
+            <div><button onClick={() => {
+                setCount((prev) => prev - 1)
+            }}>ecrement</button></div>
         </div>
     )
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 import Button from './Button'
 
-export default function Reset() {
+export default function Reset(props) {
     return (
         <div>
-            <Button />
+            <Button count={props.count} setCount={props.setCount} />
         </div>
     )
 }
