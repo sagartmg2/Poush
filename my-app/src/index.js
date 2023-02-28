@@ -12,16 +12,23 @@ import TodoApi from './component/TodoApi';
 import { BrowserRouter } from "react-router-dom"
 import ReduxComponent from './ReduxComponent';
 
+import { store } from './redux/store'
+import { Provider } from 'react-redux'
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 /*  kind of innerHTML  */
 
 root.render(
     <>
-        <BrowserRouter>
-            {/* <App /> */}
-            {/* <TodoApi /> */}
-            <ReduxComponent />
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                {/* <App /> */}
+                {/* <TodoApi /> */}
+                <ReduxComponent />
+            </BrowserRouter>
+        </Provider>
+
         {/* <Counter/> */}
         {/* <ShowInputValue/> */}
         {/* <Todos /> */}
