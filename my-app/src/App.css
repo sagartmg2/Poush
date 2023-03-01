@@ -5,3 +5,16 @@
 .hidden{
   display: none;
 }
+
+.green {
+  background-color: green;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+.red {
+  background-color: red;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}

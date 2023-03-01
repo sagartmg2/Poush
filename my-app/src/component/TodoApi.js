@@ -121,7 +121,26 @@ export default function TodoApi() {
                             return <tr key={todo.id}>
                                 <td><Link to={`/todos/${todo.id}`}> {todo.title}</Link></td>
                                 {/* <td>{JSON.stringify(todo.completed)}</td> */}
-                                <td className='badge' onClick={() => toggleStatus(index)}>{todo.completed ? "complted" : "incomplted"}</td>
+                                <td className={`${todo.completed ? "green" : "red"}`} onClick={() => toggleStatus(index)}>{todo.completed ? "complted" : "incomplted"}</td>
+                                {/* <td className='badge' onClick={() => toggleStatus(index)}>
+                                    {
+                                        todo.completed ?
+                                            // <div className='green'>complted</div>
+                                            <div className='green'>
+                                                <img>
+                                                </img>
+                                                <h2></h2>
+                                                <p></p>
+                                            </div>
+                                            :
+                                            <div className='red'>
+                                                <img>
+                                                </img>
+                                                <h2></h2>
+                                                <p></p>
+                                            </div>
+                                    }
+                                </td> */}
                             </tr>
                         })
                     }

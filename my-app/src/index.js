@@ -24,8 +24,8 @@ root.render(
         <Provider store={store}>
             <BrowserRouter>
                 {/* <App /> */}
-                {/* <TodoApi /> */}
-                <ReduxComponent />
+                <TodoApi />
+                {/* <ReduxComponent /> */}
             </BrowserRouter>
         </Provider>
 
