@@ -2,3 +2,9 @@
   content: " * ";
   color: red;
 }
+
+
+.error-message {
+  font-size: 0.8rem;
+  color: red;
+}
