@@ -1,5 +1,21 @@
+import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
+import { logout } from "../redux/slice/userSlice";
+
 export default function Navbar() {
+    const user = useSelector((redux_state) => redux_state.user.value)
+    const dispatch = useDispatch()
+
+    console.log({ user });
+
+    const handleLogout = () => {
+
+        // localStorage.removeItem("access_token")
+        dispatch(logout())
+
+
+    }
+
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -9,14 +25,25 @@ export default function Navbar() {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <Link class="nav-link" to="/login">Login</Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link class="nav-link" to="/signup">Signup</Link>
-                        </li>
+                        {
+                            !user
+                            &&
+                            <>
+                                <li class="nav-item">
+                                    <Link class="nav-link" to="/login">Login</Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link class="nav-link" to="/signup">Signup</Link>
+                                </li>
+                            </>
+                        }
                     </ul>
                     <form class="d-flex">
+                        {
+                            user
+                            &&
+                            <button class="btn-sm " type="button" onClick={handleLogout}>logout</button>
+                        }
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>

@@ -5,8 +5,34 @@ import Signup from "./pages/Signup";
 import PageNotFound from "./pages/404.jsx"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import { useEffect } from "react"
+import axios from "axios";
+import { setUser } from "./redux/slice/userSlice";
+import { useDispatch } from "react-redux";
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+
+    let access_token = localStorage.getItem("access_token")
+    if (access_token) {
+      let url = `${process.env.REACT_APP_SERVER_URL}/users/get-user`
+
+      axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      })
+        .then(res => {
+          dispatch(setUser(res.data))
+        })
+
+    }
+
+  }, []);
+
   return (
     <>
       <Navbar />

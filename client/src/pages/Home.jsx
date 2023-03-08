@@ -1,18 +1,20 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ImageNotFound from "../assets/images/ImageNotFound.jpg"
 
 export default function Home() {
 
     const [products, setproducts] = useState([]);
 
-    axios.get("https://ecommerce-sagartmg2.vercel.app/api/products")
-        .then(res => {
-            setproducts(res.data.data[0].data)
-        })
-        .catch(err => {
+    useEffect(() => {
+        axios.get("https://ecommerce-sagartmg2.vercel.app/api/products")
+            .then(res => {
+                setproducts(res.data.data[0].data)
+            })
+            .catch(err => {
 
-        })
+            })
+    }, []);
 
     return (
         <>

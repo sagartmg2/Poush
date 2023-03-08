@@ -1,20 +1,37 @@
 import axios from 'axios';
 import { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { setUser } from '../redux/slice/userSlice';
 
 export default function Login() {
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch()
+
     const [formData, setFormData] = useState({
-        email: "",
-        password: ""
+        email: "b@b.com",
+        password: "password"
     });
 
     const [error, seterror] = useState("");
 
     function handleSubmit(e) {
         e.preventDefault()
-        let url = "https://ecommerce-sagartmg2.vercel.app/api/users/login"
+        let url = `${process.env.REACT_APP_SERVER_URL}/users/login`
 
         axios.post(url, formData)
-            .then()
+            .then((res) => {
+
+                dispatch(setUser(res.data.user)) // cannot call setUser function direction, instaed we should use dispatch
+
+                localStorage.setItem("access_token", res.data.access_token)
+
+                navigate("/")
+
+                /* setup user data in redux */
+
+            })
             .catch(err => {
                 seterror(err.response.data.msg)
             })
