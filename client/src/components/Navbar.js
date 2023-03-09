@@ -35,7 +35,18 @@ export default function Navbar() {
                                 <li class="nav-item">
                                     <Link class="nav-link" to="/signup">Signup</Link>
                                 </li>
+
                             </>
+                        }
+                        {
+                            user
+                            &&
+                            <>
+                                <li class="nav-item">
+                                    <Link class="nav-link" to="/cart">Cart</Link>
+                                </li>
+                            </>
+
                         }
                     </ul>
                     <form class="d-flex">

@@ -9,6 +9,8 @@ import { useEffect } from "react"
 import axios from "axios";
 import { setUser } from "./redux/slice/userSlice";
 import { useDispatch } from "react-redux";
+import Show from "./pages/product/Show";
+import Cart from "./pages/Cart";
 
 function App() {
 
@@ -39,8 +41,14 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="products">
+            <Route index element={<Home />} />
+            <Route path=":id" element={<Show />} />
+          </Route>
+
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
