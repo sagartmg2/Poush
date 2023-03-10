@@ -2,9 +2,12 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import ImageNotFound from "../assets/images/ImageNotFound.jpg"
 import { Link } from "react-router-dom"
+import { addToCart } from '../redux/slice/cartSlice';
+import { useDispatch } from 'react-redux';
 
 export default function Home() {
 
+    const dispatch = useDispatch();
     const [products, setproducts] = useState(null);
 
     useEffect(() => {
@@ -16,6 +19,13 @@ export default function Home() {
 
             })
     }, []);
+
+    function handleAddToCart(e, product) {
+        e.preventDefault();
+
+        console.log("buttn");
+        dispatch(addToCart(product))
+    }
 
     return (
         <>
@@ -30,7 +40,7 @@ export default function Home() {
                                     <div class="card-body">
                                         <h5 class="card-title ">{product.name}</h5>
                                         <p class="card-text">${product.price}</p>
-                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        <button class="btn btn-primary" type='button' onClick={(e) => handleAddToCart(e, product)} >Add to Cart</button>
                                     </div>
                                 </div>
                             </Link>

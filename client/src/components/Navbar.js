@@ -4,6 +4,7 @@ import { logout } from "../redux/slice/userSlice";
 
 export default function Navbar() {
     const user = useSelector((redux_state) => redux_state.user.value)
+    const cart_items = useSelector((redux_state) => redux_state.cart_items.value)
     const dispatch = useDispatch()
 
     console.log({ user });
@@ -13,8 +14,9 @@ export default function Navbar() {
         // localStorage.removeItem("access_token")
         dispatch(logout())
 
-
     }
+
+    // let cart_itmes_quanity =  // calcuate each and every cart-items quanity 
 
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,7 +45,10 @@ export default function Navbar() {
                             &&
                             <>
                                 <li class="nav-item">
-                                    <Link class="nav-link" to="/cart">Cart</Link>
+                                    <Link class="nav-link" to="/cart">Cart ( {cart_items.length} ) </Link>
+                                </li>
+                                <li class="nav-item">
+                                    <Link class="nav-link" to="/products/create">Create Product  </Link>
                                 </li>
                             </>
 
