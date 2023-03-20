@@ -13,3 +13,21 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* product-image */
+.product .card-img-top {
+  height: 150px;
+  object-fit: cover;
+}
+
+.carousel-item img{
+  height: 250px;
+  object-fit: cover;
+}
+/* 
+.home-spinner{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */

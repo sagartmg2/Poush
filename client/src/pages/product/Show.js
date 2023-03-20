@@ -17,18 +17,31 @@ export default function Show() {
 
   }, []);
 
+  /* 
+    product = {}
+    product.iamges // undefined
+    product.images.map() // error 
+  */
+
   return (
     <div>
       <div className='row'>
         <div className='col-md-6'>
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
+              {
+                product.images?.map((image, index) => {
+                  return <div class={`carousel-item ${index == 0 ? "active" : ""} `}>
+                    <img src={image} class="d-block w-100" alt="..." />
+                  </div>
+                })
+              }
+              {/* <div class="carousel-item active">
                 <img src="https://picsum.photos/500/500" class="d-block w-100" alt="..." />
               </div>
               <div class="carousel-item">
                 <img src="https://picsum.photos/600/600" class="d-block w-100" alt="..." />
-              </div>
+              </div> */}
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
