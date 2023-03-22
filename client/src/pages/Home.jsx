@@ -3,9 +3,12 @@ import { useState, useEffect } from 'react'
 import ImageNotFound from "../assets/images/ImageNotFound.jpg"
 import { Link } from "react-router-dom"
 import { addToCart } from '../redux/slice/cartSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Home() {
+
+
+    const user = useSelector((redux_store) => { return redux_store.user.value })
 
     const dispatch = useDispatch();
     const [products, setproducts] = useState(null);
@@ -62,7 +65,19 @@ export default function Home() {
                                     <div class="card-body">
                                         <h5 class="card-title ">{product.name}</h5>
                                         <p class="card-text">${product.price}</p>
-                                        <button class="btn btn-primary" type='button' onClick={(e) => handleAddToCart(e, product)} >Add to Cart</button>
+                                        {
+                                            user.role == "buyer"
+                                                ?
+                                                <button class="btn btn-primary" type='button' onClick={(e) => handleAddToCart(e, product)} >Add to Cart</button>
+                                                :
+                                                <>
+                                                    <Link to={`/products/edit/${product._id}`}>
+                                                        <button class="btn btn-primary" type='button' >edit</button>
+                                                    </Link>
+                                                    <button class="btn btn-danger mx-2" type='button' >delete</button>
+                                                </>
+
+                                        }
                                     </div>
                                 </div>
                             </Link>

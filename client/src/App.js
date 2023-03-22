@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import Show from "./pages/product/Show";
 import Cart from "./pages/Cart";
 import { setcart } from "./redux/slice/cartSlice";
-import Create from "./pages/product/Create";
+import Upsert from "./pages/product/Upsert";
 
 function App() {
 
@@ -55,7 +55,8 @@ function App() {
           <Route path="products">
             <Route index element={<Home />} />
             <Route path=":id" element={<Show />} />
-            <Route path="create" element={<Create />} />
+            <Route path="edit/:id" element={<Upsert />} />
+            <Route path="create" element={<Upsert />} />
           </Route>
 
           <Route path="*" element={<PageNotFound />} />
