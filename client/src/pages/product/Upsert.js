@@ -6,7 +6,9 @@ export default function Create() {
     const [product, setproduct] = useState({
         name: "",
         price: "",
+        description: "",
         images: [],
+        categories: []
     });
 
     const { id } = useParams()
@@ -45,6 +47,12 @@ export default function Create() {
         let form_data = new FormData();
         form_data.append("name", product.name)
         form_data.append("price", product.price)
+        form_data.append("description", product.description)
+
+        product.categories.forEach(category => {
+            form_data.append("categories[]", category)
+        })
+
 
         let temp = [...product.images]
         temp.forEach(img => {
@@ -88,6 +96,15 @@ export default function Create() {
             https://developer.mozilla.org/en-US/docs/Web/API/data/data
          */
     }
+
+    function addCategory() {
+        let temp = product.categories // []
+        temp.push("")
+
+        setproduct({
+            ...product, categories: temp
+        })
+    }
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -98,6 +115,43 @@ export default function Create() {
                 <div class="mb-3">
                     <label class="form-label required-field">price</label>
                     <input type="number" class="form-control" name="price" value={product.price} onChange={handleChange} />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Categories <button class="btn btn-sm btn-secondary" onClick={addCategory} >add new </button></label>
+                    {
+                        product.categories.map((category, index) => {
+                            return <div className='d-flex align-items-center mb-2'>
+                                <input type="" class="form-control  " name="" value={category} onChange={(e) => {
+                                    let temp = product.categories
+                                    temp = temp.map((el, idx) => {
+                                        if (index == idx) {
+                                            return e.target.value
+                                        }
+                                        return el
+                                    })
+
+                                    setproduct({ ...product, categories: temp })
+                                }} />
+                                <button className='mx-2  btn btn-danger btn-sm' onClick={() => {
+                                    let temp = product.categories
+                                    temp = temp.filter((el, idx) => {
+                                        if (index != idx) {
+                                            return true
+                                        }
+                                        return false
+                                    })
+
+                                    setproduct({ ...product, categories: temp })
+
+                                }} > - </button>
+                            </div>
+                        })
+                    }
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label ">Description</label>
+                    <textarea class="form-control" name="description" value={product.description} onChange={handleChange} />
                 </div>
                 <div class="mb-3">
                     <label class="form-label required-field">Images</label>

@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 import Rating from "react-rating"
 import Star from "../../assets/images/star-full.png"
 import EmptyStar from "../../assets/images/star-empty.png"
+import { useSelector } from 'react-redux';
+import { BUYER } from '../../constants/role';
 
 export default function Show() {
 
@@ -11,6 +13,8 @@ export default function Show() {
   const { id } = useParams();
   const [rating_value, setRatingValue] = useState(0);
 
+
+  const user = useSelector((redux_store) => { return redux_store.user.value })
 
   function fetchProductDetail() {
     let url = `${process.env.REACT_APP_SERVER_URL}/products/${id}`
@@ -81,6 +85,11 @@ export default function Show() {
 
             <h1>{product?.name}</h1>
             <h2>$ {product.price}</h2>
+            <p>{
+              product?.categories?.map(categroy => {
+                return <span className='badge bg-secondary ' style={{ marginRight: "0.5rem" }}>{categroy}</span>
+              })
+            }</p>
             <p>{product.description}</p>
           </div>
           <button className='btn btn-primary'>add to cart</button>
@@ -90,48 +99,60 @@ export default function Show() {
       </div>
       <hr />
       <h2>Reviews</h2>
+      {
+        product?.reviews?.length == 0
+        &&
+        <p>no reviews yet</p>
+      }
 
-      {product?.reviews?.map(review => {
+      {
+        product?.reviews?.map(review => {
 
-        // let temp = new Array(review.rating)
+          // let temp = new Array(review.rating)
 
-        let temp = [];
+          let temp = [];
 
-        for (let i = 0; i < review.rating; i++) {
-          temp.push("")
-        }
+          for (let i = 0; i < review.rating; i++) {
+            temp.push("")
+          }
 
 
 
-        console.log({ temp })
-        return <div className='p-4 pb-2 mb-2' style={{
-          boxShadow: "1px 1px 10px 0px grey"
-        }}>
-          <p className='mb-0'>{review.created_by.name} {temp.map(el => {
-            return <img width={20} src={Star} />
-          })} </p>
-          <p>{review.comment}</p>
-        </div>
-      })}
+          console.log({ temp })
+          return <div className='p-4 pb-2 mb-2' style={{
+            boxShadow: "1px 1px 10px 0px grey"
+          }}>
+            <p className='mb-0'>{review.created_by.name} {temp.map(el => {
+              return <img width={20} src={Star} />
+            })} </p>
+            <p>{review.comment}</p>
+          </div>
+        })}
 
-      <form className='mt-5' onSubmit={updateReview}>
-        <div class="mb-3">
-          <label for="" class="form-label">Rating</label>
-          <Rating
-            initialRating={rating_value}
-            onChange={(e) => { setRatingValue(e) }}
-            emptySymbol={<img width={20} src={EmptyStar} className="icon" />}
-            fullSymbol={<img width={20} src={Star} className="icon" />}
-          />
-          {/* <input type="number" name='rating' class="form-control" id="" aria-describedby="" /> */}
-        </div>
-        <div class="mb-3">
-          <label for="" class="form-label">Comment</label>
-          <textarea name="comment" className='form-control'>
-          </textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      {
+        user?.role == BUYER
+        &&
+        <>
+          <form className='mt-5' onSubmit={updateReview}>
+            <div class="mb-3">
+              <label for="" class="form-label">Rating</label>
+              <Rating
+                initialRating={rating_value}
+                onChange={(e) => { setRatingValue(e) }}
+                emptySymbol={<img width={20} src={EmptyStar} className="icon" />}
+                fullSymbol={<img width={20} src={Star} className="icon" />}
+              />
+              {/* <input type="number" name='rating' class="form-control" id="" aria-describedby="" /> */}
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Comment</label>
+              <textarea name="comment" className='form-control'>
+              </textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </>
+      }
     </div>
   )
 }
