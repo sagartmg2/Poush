@@ -1,19 +1,28 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Rating from "react-rating"
+import Star from "../../assets/images/star-full.png"
+import EmptyStar from "../../assets/images/star-empty.png"
 
 export default function Show() {
 
   const [product, setproduct] = useState({});
   const { id } = useParams();
+  const [rating_value, setRatingValue] = useState(0);
 
-  useEffect(() => {
+
+  function fetchProductDetail() {
     let url = `${process.env.REACT_APP_SERVER_URL}/products/${id}`
     axios.get(url)
       .then(res => {
         setproduct(res.data.data)
       })
+  }
 
+  useEffect(() => {
+
+    fetchProductDetail()
 
   }, []);
 
@@ -22,6 +31,20 @@ export default function Show() {
     product.iamges // undefined
     product.images.map() // error 
   */
+
+  function updateReview(e) {
+    e.preventDefault()
+    axios.put(`https://ecommerce-sagartmg2.vercel.app/api/products/review/${id}`, {
+      rating: rating_value,
+      comment: e.target.comment.value
+    }, {
+      headers: {
+        Authorization: "Bear " + localStorage.getItem("access_token")
+      }
+    }).then(res => {
+      fetchProductDetail()
+    })
+  }
 
   return (
     <div>
@@ -58,6 +81,7 @@ export default function Show() {
 
             <h1>{product?.name}</h1>
             <h2>$ {product.price}</h2>
+            <p>{product.description}</p>
           </div>
           <button className='btn btn-primary'>add to cart</button>
 
@@ -66,8 +90,48 @@ export default function Show() {
       </div>
       <hr />
       <h2>Reviews</h2>
-      map revies...
 
+      {product?.reviews?.map(review => {
+
+        // let temp = new Array(review.rating)
+
+        let temp = [];
+
+        for (let i = 0; i < review.rating; i++) {
+          temp.push("")
+        }
+
+
+
+        console.log({ temp })
+        return <div className='p-4 pb-2 mb-2' style={{
+          boxShadow: "1px 1px 10px 0px grey"
+        }}>
+          <p className='mb-0'>{review.created_by.name} {temp.map(el => {
+            return <img width={20} src={Star} />
+          })} </p>
+          <p>{review.comment}</p>
+        </div>
+      })}
+
+      <form className='mt-5' onSubmit={updateReview}>
+        <div class="mb-3">
+          <label for="" class="form-label">Rating</label>
+          <Rating
+            initialRating={rating_value}
+            onChange={(e) => { setRatingValue(e) }}
+            emptySymbol={<img width={20} src={EmptyStar} className="icon" />}
+            fullSymbol={<img width={20} src={Star} className="icon" />}
+          />
+          {/* <input type="number" name='rating' class="form-control" id="" aria-describedby="" /> */}
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Comment</label>
+          <textarea name="comment" className='form-control'>
+          </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
   )
 }

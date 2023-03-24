@@ -16,12 +16,12 @@ a {
 
 /* product-image */
 .product .card-img-top {
-  height: 150px;
+  height: 200px;
   object-fit: cover;
 }
 
 .carousel-item img{
-  height: 250px;
+  height: 550px;
   object-fit: cover;
 }
 /* 

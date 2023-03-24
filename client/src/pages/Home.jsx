@@ -4,6 +4,7 @@ import ImageNotFound from "../assets/images/ImageNotFound.jpg"
 import { Link } from "react-router-dom"
 import { addToCart } from '../redux/slice/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { BUYER, SELLER } from '../constants/role';
 
 export default function Home() {
 
@@ -66,17 +67,20 @@ export default function Home() {
                                         <h5 class="card-title ">{product.name}</h5>
                                         <p class="card-text">${product.price}</p>
                                         {
-                                            user.role == "buyer"
+                                            user?.role == BUYER
                                                 ?
                                                 <button class="btn btn-primary" type='button' onClick={(e) => handleAddToCart(e, product)} >Add to Cart</button>
                                                 :
-                                                <>
-                                                    <Link to={`/products/edit/${product._id}`}>
-                                                        <button class="btn btn-primary" type='button' >edit</button>
-                                                    </Link>
-                                                    <button class="btn btn-danger mx-2" type='button' >delete</button>
-                                                </>
+                                                user?.role == SELLER ?
 
+                                                    <>
+                                                        <Link to={`/products/edit/${product._id}`}>
+                                                            <button class="btn btn-primary" type='button' >edit</button>
+                                                        </Link>
+                                                        <button class="btn btn-danger mx-2" type='button' >delete</button>
+                                                    </>
+                                                    :
+                                                    null
                                         }
                                     </div>
                                 </div>

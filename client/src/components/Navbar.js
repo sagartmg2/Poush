@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
+import { BUYER, SELLER } from "../constants/role";
 import { logout } from "../redux/slice/userSlice";
 
 export default function Navbar() {
@@ -44,12 +45,23 @@ export default function Navbar() {
                             user
                             &&
                             <>
-                                <li class="nav-item">
-                                    <Link class="nav-link" to="/cart">Cart ( {cart_items.length} ) </Link>
-                                </li>
-                                <li class="nav-item">
-                                    <Link class="nav-link" to="/products/create">Create Product  </Link>
-                                </li>
+                                {
+                                    user?.role == BUYER
+                                    &&
+                                    <>
+                                        <li class="nav-item">
+                                            <Link class="nav-link" to="/cart">Cart ( {cart_items.length} ) </Link>
+                                        </li>
+                                    </>
+                                }
+                                {
+                                    user?.role == SELLER
+                                    &&
+                                    <li class="nav-item">
+                                        <Link class="nav-link" to="/products/create">Create Product  </Link>
+                                    </li>
+                                }
+
                             </>
 
                         }
